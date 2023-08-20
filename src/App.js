@@ -1,3 +1,4 @@
+import { GoBell } from 'react-icons/go';
 import Button from './Button';
 
 function App() {
@@ -5,6 +6,7 @@ function App() {
     <div>
       <div>
         <Button success rounded outline>
+          <GoBell />
           Click me!
         </Button>
       </div>
