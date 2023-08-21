@@ -5,6 +5,14 @@ function Accordion({ items }) {
   //-1 is all accordion is closed when first render
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
+  const handleClick = (nextIndex) => {
+    if (expandedIndex === nextIndex) {
+      setExpandedIndex(-1);
+    } else {
+      setExpandedIndex(nextIndex);
+    }
+  };
+
   const renderedItems = items.map((item, index) => {
     const isExpanded = index === expandedIndex;
 
@@ -18,7 +26,7 @@ function Accordion({ items }) {
       <div key={item.id}>
         <div
           className="flex justify-between p-3 bg-gray-100 border-b items-center cursor-pointer"
-          onClick={() => setExpandedIndex(index)}
+          onClick={() => handleClick(index)}
         >
           {item.label}
           {icon}
