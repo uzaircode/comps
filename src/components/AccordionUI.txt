@@ -1,0 +1,30 @@
+import AccordionUI from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+
+function Accordion({ items }) {
+  const renderedItems = items.map((item) => {
+    return (
+      <div>
+        <AccordionUI>
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography>{item.label}</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Typography>{item.content}</Typography>
+          </AccordionDetails>
+        </AccordionUI>
+      </div>
+    );
+  });
+
+  return <div className="border-x border-t rounded p-8">{renderedItems}</div>;
+}
+
+export default Accordion;
