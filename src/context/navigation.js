@@ -5,6 +5,17 @@ const NavigationContext = createContext();
 function NavigationProvider({ children }) {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
+  // Handling user click forward & back
+  useEffect(() => {
+    const handler = () => {
+      setCurrentPath(window.location.pathname);
+    };
+    window.addEventListener('popstate', handler);
+
+    return () => {
+      window.removeEventListener('popstate', handler);
+    };
+  }, []);
 
   return (
     <NavigationContext.Provider value={{}}>
