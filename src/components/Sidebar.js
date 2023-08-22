@@ -14,6 +14,10 @@ function Sidebar() {
       label: 'Accordion',
       path: '/accordion',
     },
+    {
+      label: 'Modal',
+      path: '/modal',
+    },
   ];
 
   const renderedLinks = links.map((link) => {
