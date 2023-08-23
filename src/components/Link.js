@@ -15,6 +15,7 @@ function Link({ to, children, className, activeClassName }) {
     if (event.crtlKey || event.metaKey) {
       return;
     }
+    event.preventDefault();
 
     navigate(to);
   };
