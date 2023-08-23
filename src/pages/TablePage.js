@@ -22,9 +22,13 @@ function Tablepage() {
     },
   ];
 
+  const keyFunction = (fruit) => {
+    return fruit.name;
+  };
+
   return (
     <div>
-      <Table data={data} config={config}></Table>
+      <Table data={data} config={config} keyFn={keyFunction}></Table>
     </div>
   );
 }
